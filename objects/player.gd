@@ -103,7 +103,7 @@ func _physics_process(delta: float):
 	rotation_delta = Vector2.ZERO
 
 	container.position = lerp(
-		container.position, container_offset - (applied_velocity / 30), delta * 10
+		container.position, container_offset - (basis.inverse() * applied_velocity / 30), delta * 10
 	)
 
 	# Movement sound
